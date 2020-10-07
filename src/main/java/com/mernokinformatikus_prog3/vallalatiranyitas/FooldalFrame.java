@@ -10,7 +10,7 @@ package com.mernokinformatikus_prog3.vallalatiranyitas;
  * @author Zsolti
  */
 public class FooldalFrame extends javax.swing.JFrame {
-
+//Komment
     private CoreFunctions CF = new CoreFunctions();
     /**
      * Creates new form FooldalFrame
