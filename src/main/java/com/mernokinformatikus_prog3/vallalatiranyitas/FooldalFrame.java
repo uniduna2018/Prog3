@@ -10,7 +10,7 @@ package com.mernokinformatikus_prog3.vallalatiranyitas;
  * @author Zsolti
  */
 public class FooldalFrame extends javax.swing.JFrame {
-//Komment
+
     private CoreFunctions CF = new CoreFunctions();
     /**
      * Creates new form FooldalFrame
@@ -29,6 +29,10 @@ public class FooldalFrame extends javax.swing.JFrame {
 
         jPanelFooldal = new javax.swing.JPanel();
         jButtonBezar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaKiir = new javax.swing.JTextArea();
+        jButtonKiir = new javax.swing.JButton();
+        jButtonTorol = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bejelentkezés");
@@ -47,7 +51,7 @@ public class FooldalFrame extends javax.swing.JFrame {
         );
         jPanelFooldalLayout.setVerticalGroup(
             jPanelFooldalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
         );
 
         jButtonBezar.setBackground(new java.awt.Color(60, 145, 183));
@@ -61,24 +65,73 @@ public class FooldalFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextAreaKiir.setColumns(20);
+        jTextAreaKiir.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaKiir);
+
+        jButtonKiir.setBackground(new java.awt.Color(60, 145, 183));
+        jButtonKiir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonKiir.setText("Kiír");
+        jButtonKiir.setActionCommand("");
+        jButtonKiir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonKiir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonKiirActionPerformed(evt);
+            }
+        });
+
+        jButtonTorol.setBackground(new java.awt.Color(51, 204, 255));
+        jButtonTorol.setText("Törlés");
+        jButtonTorol.setActionCommand("");
+        jButtonTorol.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonTorol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTorolActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelFooldal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 656, Short.MAX_VALUE)
-                .addComponent(jButtonBezar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonBezar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jButtonKiir, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonTorol, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(457, Short.MAX_VALUE))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(200, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(233, 233, 233)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelFooldal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButtonBezar)
-                .addContainerGap(465, Short.MAX_VALUE))
-            .addComponent(jPanelFooldal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(190, 190, 190)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonKiir)
+                    .addComponent(jButtonTorol))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(125, 125, 125)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(287, Short.MAX_VALUE)))
         );
+
+        jButtonKiir.getAccessibleContext().setAccessibleName("Kiír");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,8 +140,20 @@ public class FooldalFrame extends javax.swing.JFrame {
         CF.bezaras();
     }//GEN-LAST:event_jButtonBezarActionPerformed
 
+    private void jButtonKiirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKiirActionPerformed
+        jTextAreaKiir.setText("Szevasz!");
+    }//GEN-LAST:event_jButtonKiirActionPerformed
+
+    private void jButtonTorolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTorolActionPerformed
+        jTextAreaKiir.setText(null);
+    }//GEN-LAST:event_jButtonTorolActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBezar;
+    private javax.swing.JButton jButtonKiir;
+    private javax.swing.JButton jButtonTorol;
     private javax.swing.JPanel jPanelFooldal;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAreaKiir;
     // End of variables declaration//GEN-END:variables
 }
